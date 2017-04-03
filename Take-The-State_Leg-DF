@@ -1,1 +1,47 @@
+#This dataframe contains information about the United States legislatures. 
+#It is ordered by states, dems+repubs+other seats in assembly,
+#dems+repubs+other seats in senate,
 
++import pandas as pd
++import matplotlib.pyplot as plt
++from matplotlib import style
++import numpy as np
++
++style.use('fivethirtyeight')
++
++us_legislatures = {'State':['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
++                       'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 
++                       'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
++                       'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 
++                       'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'],
++              'Dem_Assembly_Seats':[32, 17, 25, 24, 55, 37, 79, 25, 41,62, 45, 11,
++                                    67, 30, 41, 40, 36, 42, 76, 90, 125, 47, 57,
++                                    48, 46, 41, 0, 27, 175, 52, 38, 107, 46, 13,
++                                    33, 26, 35, 81, 64, 44, 10, 25, 56, 13, 91,
++                                    34, 50, 37, 35, 9],
++              'Rep_Assembly_Seats':[72, 21, 35, 76, 25, 28, 72, 16, 79, 118, 6,
++                                    59, 51, 70, 59, 85, 64, 60, 73, 51, 35, 63,
++                                    76, 72, 117, 59, 0, 15, 225, 28, 32, 43, 74,
++                                    81, 66, 75, 25, 122, 10, 80, 60, 74, 94, 62,
++                                    53, 66, 48, 63, 64, 51,],
++              'Oth_Assembly_Seats':[1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
++                                    0, 0, 3, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0,
++                                    0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 6,
++                                    0, 0, 0, 0, 0],                                         
++              'Dem_Senate_Seats':[8, 6, 13, 9, 27, 17, 18, 11, 15, 18, 25, 6, 37, 
++                                  9, 19, 9, 11, 14, 17, 33, 34, 11, 33, 20, 9, 18,
++                                  0, 11, 10, 24, 26, 32, 15, 9, 9, 6, 17, 16, 33,
++                                  18, 6, 5, 11, 5, 23, 19, 25, 12, 13, 3],
++              'Rep_Senate_Seats':[26, 14, 17, 26, 13, 18, 18, 10, 25, 38, 0, 29,
++                                  22, 41, 29, 31, 27, 25, 18, 14, 6, 27, 34, 32,
++                                  25, 32, 0, 9, 14, 16, 16, 31, 35, 38, 24, 42,
++                                  13, 34, 5, 28, 29, 28, 20, 24, 7, 21, 24, 22,
++                                  20, 27],
++              'Oth_Senate_Seats':[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
++                                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49, 1, 0, 0,
++                                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
++                                  0, 0, 0, 0, 0,]}
++
++df = pd.DataFrame(us_legislatures)
++              
++print(df.set_index('State')) 
