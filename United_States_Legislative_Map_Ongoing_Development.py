@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.cm
 import pandas as pd
 import datetime
-import pandas.io.data as web
+from pandas_datareader import data, wb
 
 
 from mpl_toolkits.basemap import Basemap
